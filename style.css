@@ -31,7 +31,7 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
 }
 
 /* ---  Groups & Items --- */
@@ -66,6 +66,10 @@ header {
 
 header nav ul li {
   list-style-type: none;
+  display:inline-flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 header nav ul li a {
@@ -81,18 +85,24 @@ header nav ul li a:hover {
 
 /* -------  Search Form ------- */
 form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   border: 2px solid #ff385c;
   padding: 10px;
+  box-sizing: border-box;
 }
 
 form label {
   font-weight: bold;
 }
 
+form label,
 form select,
 form input {
   margin-bottom: 20px;
   width: 180px;
+  display: inline;
 }
 
 form button {
@@ -102,6 +112,32 @@ form button {
   font-size: 24px;
   padding: 15px;
   width: 100%;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-element {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+/* -------  Images ------- */
+img {
+  padding: 10px 0;
+}
+
+p {
+  text-align: justify;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
 }
 
 /* -------  Footer ------- */
@@ -117,3 +153,68 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+
+@media all and (min-width: 480px) {
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo {
+  margin-top: -10px;
+}
+
+#menu {
+  margin-top: 20px;
+}
+
+#form {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  justify-content: space-between;
+  vertical-align: middle;
+}
+
+.form-element {
+  display: flex;
+  margin-right: 2px;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+#form .button button {
+  margin: 15px 10px 0 0;
+  width: 200px;
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+}
+
+.about img {
+  width: 30%;
+  margin-right: 20px;
+}
+
+.about div {
+  padding: 70px 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  flex: 1;
+}
+
+}
